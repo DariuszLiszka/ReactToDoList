@@ -1,5 +1,6 @@
 import React from "react";
 
+// use <> Something </> instead of <React.Fragment> Something </React.Fragment>
 function About() {
   return (
     <React.Fragment>

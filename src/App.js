@@ -12,6 +12,8 @@ class App extends Component {
   };
 
   componentDidMount() {
+    // use env var
+    // also you should use service layer separation
     axios
       .get("https://jsonplaceholder.typicode.com/todos?_limit=10")
       .then(res => this.setState({ todos: res.data }));
@@ -25,6 +27,8 @@ class App extends Component {
     });
   };
   delToDo = id => {
+    // use env var
+    // also you should use service layer separation
     axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`).then(res =>
       this.setState({
         todos: [...this.state.todos.filter(todo => todo.id !== id)]
@@ -32,6 +36,8 @@ class App extends Component {
     );
   };
   addTodo = title => {
+    // use env var
+    // also you should use service layer separation
     axios
       .post("https://jsonplaceholder.typicode.com/todos", {
         title: title,
@@ -63,11 +69,7 @@ class App extends Component {
           />
           <Route
             path="/about"
-            render={props => (
-              <React.Fragment>
-                <About />
-              </React.Fragment>
-            )}
+            component={About}
           />
         </div>
       </Router>

@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 
 export class ToDoItem extends Component {
+
+  // use classnames library to set proper styling depending on some statement
   setStyle = () => {
     return {
       textDecoration: this.props.todo.completed ? "line-through" : "none"
     };
   };
 
+  // try to never use `style` property
   render() {
     const { title, id } = this.props.todo;
     return (

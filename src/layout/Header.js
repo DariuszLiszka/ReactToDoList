@@ -9,6 +9,8 @@ function Header() {
     </div>
   );
 }
+
+// use css modules
 const headerStyle = {
   background: "black",
   color: "white",
